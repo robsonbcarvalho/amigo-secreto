@@ -6,7 +6,7 @@ Desenvolvida em STACK MEAN, esta aplicação fornece um CRUD, permitindo cadastr
 
 ## Servidor MongoDB
 
-O endereço do servidor MongoDB está configurado em **Localhost (127.0.0.1)** nesta versão do código, e o mesmo DEVERÁ estar em execução para o correto funcionamento da aplicação.
+O endereço do servidor MongoDB está configurado em **Localhost (127.0.0.1)** nesta versão do código, e o mesmo **DEVERÁ** estar em execução para o correto funcionamento da aplicação.
 
 ## Servidor STMP
 
@@ -35,14 +35,14 @@ $ backend> npm install
 A aplicação SPA deve ser executada através de um terminal ou de linha de comandos, a partir da pasta frontend. O **gulp** será utilizado para iniciar tanto o frontend quando o backend:
 
 ```sh
-cd frontend
-frontend> gulp
+$ cd frontend
+$ frontend> gulp
 ```
 
 O frontend será iniciado e o seguinte endereço deverá ser acessado através do navegador web de preferência.
 
 ```sh
-127.0.0.1:3001
+http:127.0.0.1:3001
 ```
 
 O backend será iniciado em http://127.0.0.1:3000 e servirá a API para consumo da aplicação SPA.
