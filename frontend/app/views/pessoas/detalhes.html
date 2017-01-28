@@ -1,0 +1,19 @@
+<div class="row">
+  <div class="col s12 m8">
+    <div class="card blue-grey darken-1">
+      <div class="card-content white-text">
+        <span class="card-title"><i class="material-icons left large">person</i>{{ Detalhes.pessoa.nome }}</span>
+        <div class="row"> 
+          <i class="material-icons left">email</i> {{ Detalhes.pessoa.email }}
+        </div>
+        <div class="row" ng-if="(Detalhes.pessoa.amigo != undefined)">
+          <i class="material-icons left">group</i> {{ Detalhes.pessoa.amigo }}
+        </div>
+      </div>
+      <div class="card-action">
+        <a href="/pessoas/listar">Lista</a>
+        <a href="/pessoas/sorteio">Sorteio</a>
+      </div>
+    </div>
+  </div>
+</div>

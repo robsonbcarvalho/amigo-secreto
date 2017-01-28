@@ -1,0 +1,41 @@
+<h4><i class="material-icons left small">person_add</i>Cadastro de Pessoas</h4>
+<form name="pessoaForm" ng-submit="PessoaCreate.submitCreateForm(PessoaCreate.form)">
+	<div ng-class="{'invalid' : pessoaForm.nome.$invalid && !pessoaForm.nome.$pristine, 'dirty': pessoaForm.nome.$dirty }">
+		<div class="input-field col s10">
+			<i class="material-icons prefix">person</i>
+			<input type="text" ng-model="PessoaCreate.form.nome" name="nome" placeholder="Nome" required="required" minlength="3" autocomplete="off" auto-focus>
+		</div>
+
+		<div ng-messages="pessoaForm.nome.$error" ng-if="pessoaForm.nome.$dirty">
+			<p ng-message="required">O nome é obrigatório.</p>
+			<p ng-message="minlength">O nome precisa ser maior ou igual a 3 letras.</p>
+		</div>
+	</div>
+
+	<div ng-class="{'invalid' : pessoaForm.email.$invalid && !pessoaForm.email.$pristine, 'dirty' : pessoaForm.email.$dirty }">
+		<div class="input-field col s10">
+			<i class="material-icons prefix">email</i>
+			<input type="email" ng-model="PessoaCreate.form.email" name="email"  placeholder="Email" class="validate" required="required">
+		</div>
+	</div>
+
+	<div>
+		<p ng-show="{{ PessoaCreate.createErrors.length > 0 }}">
+			<ul>
+				<li ng-repeat="error in PessoaCreate.createErrors">
+					{{ error }}
+				</li>
+			</ul>
+		</p>
+	</div>
+
+	<div ng-messages="update" ng-if="PessoaCreate.updated" class="col s12 updated">
+		<p>Atualizado com sucesso!</p>
+	</div>
+
+	<button ng-if="!PessoaCreate.editing" ng-disabled="PessoaCreate.editing || pessoaForm.nome.$pristine || pessoaForm.$submitted" class="btn btn-large green waves-effect waves-light col s6" type="submit" name="action"><i class="material-icons left">save</i>Salvar</button>
+	
+	<button ng-if="PessoaCreate.editing" ng-click="PessoaCreate.novo()" class="btn btn-large green waves-effect waves-light col s6" type="button" name="action"><i class="material-icons left">person_add</i>Novo</button>
+
+	<button ng-if="PessoaCreate.editing" ng-click="PessoaCreate.submitEditForm(PessoaCreate.form)" class="btn btn-large blue waves-effect waves-light col s6 animate" type="button"><i class="material-icons left">edit</i>Alterar</button>
+</form>

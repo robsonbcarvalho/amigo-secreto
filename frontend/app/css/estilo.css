@@ -1,0 +1,71 @@
+.wrapper {
+	max-width: 660px;
+	margin: 0 auto; 
+}
+.animate {
+	transition: all linear 0.5s;
+}
+.ng-hide {
+	height: 0px;
+}
+.item.ng-enter {
+	-webkit-transition:all linear 0.5s;
+	transition:all linear 0.5s;
+}
+.item.ng-enter {
+	opacity: 0;
+}
+.item.ng-enter.ng-enter-active {
+	color: #4CAF50;
+	font-weight: bold;
+	opacity: 1;
+}
+
+.item.ng-leave {
+	-webkit-transition:all linear 1s;
+	transition:all linear 1s;
+}
+.item.ng-leave {
+	opacity: 1;
+}
+.item.ng-leave.ng-leave-active {
+	opacity: 0;
+}
+
+.item.ng-move {
+	-webkit-transition:all linear 2s;
+	transition:all linear 2s;
+}
+.item.ng-move {
+	opacity: 0;
+}
+.item.ng-move.ng-move-active {
+	opacity: 1;
+}
+.bold {
+	font-weight: bold;
+}
+.strike {
+	text-decoration: line-through; 
+}
+
+html body select { /*hack para materializecss*/
+	display: inline-block;
+}
+
+[disable] {
+	background-color: #ccc !important;
+}
+
+.invalid {
+	background-color: #dddddd;
+}
+
+.updated {
+    color: navy;
+    background-color: #a8c9ff;
+    margin-bottom: 20px;
+}
+
+.material-icons.green000 { color: #61ee61; background-color: white; }
+.material-icons.red000 { color: red; background-color: white; }

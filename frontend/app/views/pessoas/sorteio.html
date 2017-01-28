@@ -1,0 +1,39 @@
+<div class="row" ng-init="Pessoa.emailEnviado = false">
+		<div class="col s8">
+			<h4><i class="material-icons left">shuffle</i>Sorteio</h4>			
+		</div>
+		<button ng-disabled="!(Pessoa.pessoas.length > 1)" ng-click="Pessoa.sortear()" class="btn btn-large  waves-effect waves-light col s4" type="button"><i class="material-icons left">loop</i>Realizar Sorteio
+		</button>
+</div>
+
+<div ng-messages="update" ng-if="!(Pessoa.pessoas.length > 1)" class="col s12 updated">
+		<p>Quantidade insuficiente de pessoas para realizar sorteio!</p>
+</div>
+
+<div ng-messages="emailEnviado" ng-if="(Pessoa.emailEnviado)" class="col s12 updated">
+		<p>O nome dos amigos foram enviados por e-mail!</p>
+</div>
+
+<table>
+	<thead>
+		<tr ng-show="(Pessoa.pessoas.length > 1)">
+			<th colspan="{{ Pessoa.keysLength + 3 }}">
+				<label>
+					<input ng-model="searchPessoa" ng-model-options="{ debounce: 1000 }" placeholder="Pesquisar">
+				</label>
+			</th>
+		</tr>
+		<tr>
+			<th>Nome</th>
+			<th>Email</th>
+			<th class="center">Tem Amigo</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr ng-class="{bold: !Pessoa.selecionado, strike: Pessoa.selecionado}" class="item" ng-repeat="pessoa in Pessoa.pessoas | orderBy:Pessoa.predicate | filter:searchPessoa ">
+			<td><a href="/pessoas/detalhes/{{pessoa._id}}">{{ pessoa.nome }}</a></td>
+			<td>{{ pessoa.email }}</td>
+			<td class="center"><i class="material-icons {{ pessoa.temAmigo ? 'green000' : 'red000' }}">{{ pessoa.temAmigo ? 'done' : 'clear' }}</i></td>
+		</tr>
+	</tbody>
+</table>

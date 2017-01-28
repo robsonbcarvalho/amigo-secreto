@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br" ng-app="appAmigoSecreto">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no"/>
+    <base href="/">
+    <title>Amigo Secreto</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="app/css/materialize.min.css">
+    <link rel="stylesheet" href="app/css/estilo.css">
+  </head>
+  <body>
+    <section class="row wrapper">
+      <div>
+      <nav>
+        <div class="nav-wrapper">
+          <a href="#" class="brand-logo right">Amigo Secreto</a>
+          <ul id="nav-mobile" class="left hide-on-med-and-down">
+            <li>
+              <a href="/pessoas/listar"><i class="material-icons left">list</i>Listar</a>
+            </li>
+            <li>
+              <a href="/pessoas/cadastrar"><i class="material-icons left">person_add</i>Cadastrar</a>
+            </li>
+            <li>
+              <a href="/pessoas/sorteio"><i class="material-icons left">shuffle</i>Sorteio</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+      </div>
+
+      <div ui-view></div>
+    </section>
+
+    <!-- angular -->
+    <script src="./node_modules/angular/angular.js"></script>
+    <script src="./node_modules/angular-ui-router/release/angular-ui-router.js"></script>
+    <script src="./node_modules/angular-animate/angular-animate.js"></script>
+    <script src="./node_modules/angular-messages/angular-messages.js"></script>
+
+    <!-- config e route -->
+    <script src="./app/app.js"></script>
+    <script src="./app/routes.js"></script>
+    <script src="./app/config.js"></script>
+
+    <!-- controllers -->
+    <script src="./app/controllers/home.controller.js"></script>
+    <script src="./app/controllers/pessoas.controller.js"></script>
+    <script src="./app/controllers/erro.controller.js"></script>
+  </body>
+</html>

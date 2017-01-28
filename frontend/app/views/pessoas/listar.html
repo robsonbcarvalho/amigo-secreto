@@ -1,0 +1,42 @@
+<h4><i class="material-icons left small">list</i>Lista de Pessoas</h4>
+
+<div ng-if="(Pessoa.pessoas.length == 0)">
+	Nenhuma pessoa cadastrada. <a href="pessoas/cadastrar">Cadastre agora.</a>
+</div>
+
+<table>
+	<thead>
+		<tr ng-show="(Pessoa.pessoas.length > 1)">
+			<th colspan="{{ Pessoa.keysLength + 2 }}">
+				<label>
+					<input ng-model="searchPessoa" ng-model-options="{ debounce: 1000 }" placeholder="Pesquisar">
+				</label>
+			</th>
+		</tr>
+		<tr ng-if="(Pessoa.pessoas.length > 1)">
+			<th><i class="material-icons left">delete_forever</i></th>
+			<th>Nome</th>
+			<th>Email</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr ng-class="{bold: !Pessoa.selecionado, strike: Pessoa.selecionado}" class="item" ng-repeat="pessoa in Pessoa.pessoas | orderBy:Pessoa.predicate | filter:searchPessoa ">
+			<td>
+				<input type="checkbox" id="pessoa-{{pessoa._id}}" ng-click="Pessoa.markRemove(pessoa._id, $event)">
+				<label for="pessoa-{{pessoa._id}}"></label>
+			</td>
+			<td><a href="/pessoas/detalhes/{{pessoa._id}}">{{ pessoa.nome }}</a></td>
+			<td>{{ pessoa.email }}</td>
+			<td>
+				<a href="/pessoas/editar/{{pessoa._id}}" ng-show="!Pessoa.editing" ng-click="Pessoa.editar(pessoa, $index)" class="btn blue waves-effect waves-light col s10"><i class="material-icons left">edit</i>Editar</a>
+			</td>
+		</tr>
+	</tbody>
+</table>
+
+<div class="botoes-pos-lista">
+	<div class="row">
+		<button ng-if="(Pessoa.pessoas.length > 0)" ng-click="Pessoa.remove(Pessoa.pessoas)" class="btn btn-large red waves-effect waves-light col s6" type="submit"><i class="material-icons left">delete_forever</i>Excluir Selecionados
+		</button>
+	</div>
+</div>
