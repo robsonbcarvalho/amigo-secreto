@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ## Sinópse
 
 Aplicação SPA - Amigo Secreto
@@ -63,3 +64,7 @@ Endpoint |Method | Description
 ## Contribuidores
 
 Robson Bezerra Carvalho
+=======
+# k010
+Amigo Secreto
+>>>>>>> 325d91de3942547f0ac41337e45b90bc1e5269a5
