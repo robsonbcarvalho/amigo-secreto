@@ -55,7 +55,7 @@ Para iniciar o backend manualmente, siga os comandos:
 
 ```sh
 $ cd backend
-$ frontend> npm start
+$ backend> npm start
 ```
 
 ## Referência da API
