@@ -1,12 +1,14 @@
-## Sinópse
+## Sinopse
 
-Aplicação SPA - Amigo Secreto
+Aplicação SPA Amigo Secreto
 
-Desenvolvida em STACK MEAN, esta aplicação fornece um CRUD, permitindo cadastrar, recuperar, alterar e excluir dados básicos de pessoas em um banco dados MongoDB, bem como realizar o sorteio de amigo secreto entre as pessoas previamente cadastradas.  
+Desenvolvida em stack MEAN, esta aplicação fornece um CRUD, permitindo cadastrar, recuperar, alterar e excluir dados básicos de pessoas em um banco dados MongoDB, bem como realizar o sorteio de amigo secreto entre as pessoas previamente cadastradas.  
 
 ## Servidor MongoDB
 
 O endereço do servidor MongoDB está configurado com endereço **Localhost (127.0.0.1)** nesta versão do código, e o mesmo **DEVERÁ** estar em execução para o correto funcionamento da aplicação.
+
+A configuração da conexão mongodb pode ser alterada em backend/db/config.js. 
 
 ## Servidor STMP
 
@@ -48,6 +50,13 @@ http://127.0.0.1:3001
 ```
 
 O backend será iniciado em http://127.0.0.1:3000 e servirá a API para consumo da aplicação SPA.
+
+Para iniciar o backend manualmente, siga os comandos:
+
+```sh
+$ cd backend
+$ frontend> npm start
+```
 
 ## Referência da API
 
